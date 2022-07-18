@@ -6,6 +6,11 @@
       href="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css"
       rel="stylesheet"
     />
+    <script src="https://unpkg.com/maplibre-gl@2.1.9/dist/maplibre-gl.js"></script>
+    <link
+      href="https://unpkg.com/maplibre-gl@2.1.9/dist/maplibre-gl.css"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
@@ -14,11 +19,31 @@
       style="position: absolute; top: 0; bottom: 0; width: 100%"
     ></div>
 
+    <!-- Create a <div> tag to contain the <select> dropdown menu. Add a basemap layer enumeration for each <options></options> element. -->
+    <div id="basemaps-wrapper">
+      <select id="basemaps">
+        <option value="ArcGIS:StreetsNight">Streets Night</option>
+        <option value="ArcGIS:Streets">Streets</option>
+        <option value="ArcGIS:Navigation">Navigation</option>
+        <option value="ArcGIS:Topographic">Topographic</option>
+        <option value="ArcGIS:LightGray">Light Gray</option>
+        <option value="ArcGIS:DarkGray">Dark gray</option>
+        <option value="ArcGIS:StreetsRelief">Streets Relief</option>
+        <option value="ArcGIS:ChartedTerritory">ChartedTerritory</option>
+        <option value="ArcGIS:ColoredPencil">ColoredPencil</option>
+        <option value="ArcGIS:Nova">Nova</option>
+        <option value="ArcGIS:Midcentury">Midcentury</option>
+        <option value="OSM:Standard">OSM</option>
+        <option value="OSM:Streets">OSM:Streets</option>
+      </select>
+    </div>
+
     <!-- Draw the map -->
     <script type="module">
       var lonlat = [-67.212, 37.114]; //[-75.23825026538958, 35.71937869595126];
-      import { drawMap } from './resources/js/mapping.js';
-      var my_map = drawMap({ lonlat: lonlat, startZoom: 5 });
+      import { drawMap, drawMapLibre } from './resources/js/mapping.js';
+      //var my_map = drawMap({ lonlat: lonlat, startZoom: 5 });
+      drawMapLibre();
     </script>
   </body>
 </html>

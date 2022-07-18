@@ -1,40 +1,28 @@
+html,
 body {
-  background: #20262E;
-  padding: 20px;
-  font-family: Helvetica;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #323232;
 }
 
-#app {
-  background: #fff;
-  border-radius: 4px;
-  padding: 20px;
-  transition: all 0.2s;
-  text-align: center;
+#file {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
-#context-menu {
-  position: fixed;
-  z-index: 10000;
-  width: 150px;
-  background: #1b1a1a;
-  border-radius: 5px;
-  transform: scale(0);
-  transform-origin: top left;
+#basemaps-wrapper {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0);
 }
 
-#context-menu.visible {
-  transform: scale(1);
-  transition: transform 200ms ease-in-out;
-}
-
-#context-menu .item {
-  padding: 8px 10px;
-  font-size: 15px;
-  color: #eee;
-  cursor: pointer;
-  border-radius: inherit;
-}
-
-#context-menu .item:hover {
-  background: #343434;
+#basemaps {
+  font-size: 16px;
+  padding: 4px 8px;
 }
