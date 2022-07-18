@@ -1,0 +1,206 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#e6194B",
+        "Name": "Twin Otter",
+        "description": "Twin Otter orbit center point",
+        "altitudeMode": "relativeToGround",
+        "altitude": 2591
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.1728, 37.1682]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#3cb44b",
+        "Name": "ECHO",
+        "description": "ECHO in the parking lot",
+        "altitudeMode": "relativeToGround",
+        "altitude": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.4382, 38.2788]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#ffe119",
+        "Name": "E-2D 2",
+        "description": "HawkeyeTwo route center",
+        "altitudeMode": "relativeToGround",
+        "altitude": 7315
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-75.6904, 39.4701]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#4363d8",
+        "Name": "E-2D 1",
+        "description": "HawkeyeOne route center",
+        "altitudeMode": "relativeToGround",
+        "altitude": 7315
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.2404, 39.1897]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#f58231",
+        "Name": "G-IV",
+        "description": "G-IV route center",
+        "altitudeMode": "relativeToGround",
+        "altitude": 7925
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-74.1691, 37.4085]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#911eb4",
+        "Name": "TBD",
+        "description": "TBD route center",
+        "altitudeMode": "relativeToGround"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-74.8667, 36.7159]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#42d4f4",
+        "Name": "Lear 1",
+        "description": "Learjet #1 route center",
+        "altitudeMode": "relativeToGround",
+        "altitude": 7315
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-74.4342, 35.701]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#f032e6",
+        "Name": "Lear 2",
+        "description": "Learjet #2 route center",
+        "altitudeMode": "relativeToGround",
+        "altitude": 6706
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.5758, 34.9435]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#bfef45",
+        "Name": "Lear 3",
+        "description": "Lear #3 route center",
+        "altitudeMode": "relativeToGround",
+        "altitude": 5486
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-75.6904, 33.3781]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#fabed4",
+        "Name": "Lear 4",
+        "description": "Learjet #4 route center",
+        "altitudeMode": "relativeToGround",
+        "altitude": 6096
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-75.5498, 33.2603]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#fffac8",
+        "Name": "L0",
+        "description": "Learjet OTH route initial waypoint",
+        "altitudeMode": "relativeToGround",
+        "altitude": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-75.6201, 33.3194]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#fffac8",
+        "Name": "L1",
+        "description": "Learjet OTH route mid waypoint",
+        "altitudeMode": "relativeToGround",
+        "altitude": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-75.2381, 35.7189]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#fffac8",
+        "Name": "L2",
+        "description": "Learjet OTH route end waypoint",
+        "altitudeMode": "relativeToGround",
+        "altitude": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-75.2381, 37.7]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stroke": "#fffac8",
+        "stroke-width": 2,
+        "stroke-opacity": 1,
+        "marker-color": "#000000",
+        "Name": "Lear path",
+        "description": "Learjet OTH route",
+        "altitudeMode": "null"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-75.6205, 33.3242],
+          [-75.2383, 35.7194],
+          [-75.2385, 37.7021]
+        ]
+      }
+    }
+  ]
+}

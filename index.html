@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.js"></script>
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div
+      id="map"
+      style="position: absolute; top: 0; bottom: 0; width: 100%"
+    ></div>
+
+    <!-- Draw the map -->
+    <script type="module">
+      var lonlat = [-67.212, 37.114]; //[-75.23825026538958, 35.71937869595126];
+      import { drawMap } from './resources/js/mapping.js';
+      var my_map = drawMap({ lonlat: lonlat, startZoom: 5 });
+    </script>
+  </body>
+</html>
