@@ -3,17 +3,50 @@ function drawMap(opts) {
   const { lonlat, startZoom } = opts;
   console.log(opts);
   // need an access token to make the map appear
-  mapboxgl.accessToken =
-    'pk.eyJ1Ijoibmlja21vb3NlIiwiYSI6ImNsM2xuNDcydzAzeWszaW44ZWUycWVoNmcifQ.rEPFnmPHAimsnSZcMF_lmA';
-
-  // create the map
-  var map = new mapboxgl.Map({
+  const apiKey =
+    'AAPKfb602d414be84769b5019dddd3acdc66nkwfXW9n-1v8im--qHk6aMGZLa4lffe2WlENaBWIUOvaRwgWzKGWUIBSKU6UvCM9';
+  const basemapEnum = 'ArcGIS:LightGray';
+  const map = new maplibregl.Map({
     container: 'map', // container ID
-    center: lonlat, // starting position [longitude, latitude]
-    zoom: startZoom, // starting zoom
-    style: 'mapbox://styles/mapbox/light-v10', // style URL
-    hash: true,
+    style: `https://basemaps-api.arcgis.com/arcgis/rest/services/styles/${basemapEnum}?type=style&token=${apiKey}`,
+    center: [-67.2112, 37.114], // starting position [lng, lat]
+    zoom: 4, // starting zoom
   });
+
+  const layerList = document.getElementById('menu');
+  const inputs = layerList.getElementsByTagName('input');
+
+  for (const input of inputs) {
+    input.onclick = (layer) => {
+      const layerId = layer.target.id;
+      switch (layerId) {
+        case 'satellite-v9':
+        case 'light-v10':
+        case 'dark-v10':
+        case 'streets-v11':
+        case 'outdoors-v11':
+          map.setStyle('mapbox://styles/mapbox/' + layerId);
+          break;
+        case 'ArcGIS:LightGray':
+        case 'ArcGIS:DarkGray':
+        case 'ArcGIS:Streets':
+        case 'ArcGIS:Midcentury':
+        case 'ArcGIS:Nova':
+        case 'ArcGIS:Imagery:Standard':
+          map.setStyle(
+            `https://basemaps-api.arcgis.com/arcgis/rest/services/styles/${layerId}?type=style&token=${apiKey}`
+          );
+          break;
+        case 'voyager':
+          map.setStyle(
+            'https://api.maptiler.com/maps/voyager/style.json?key=C2S8U7Rye68dJkJXuYS9'
+          );
+          break;
+        default:
+          break;
+      } // switch
+    };
+  }
 
   // add the data
   map.on('load', () => {
