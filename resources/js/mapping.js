@@ -25,7 +25,9 @@ function drawMap(opts) {
   return map;
 } // drawMap
 
-function drawMapLibre() {
+function drawMapLibre(opts) {
+  // parse the input variables
+  const { lonlat, startZoom } = opts;
   const apiKey =
     'AAPKfb602d414be84769b5019dddd3acdc66nkwfXW9n-1v8im--qHk6aMGZLa4lffe2WlENaBWIUOvaRwgWzKGWUIBSKU6UvCM9';
   const basemapEnum = 'ArcGIS:StreetsNight';
@@ -36,8 +38,8 @@ function drawMapLibre() {
     container: 'map',
     style:
       'https://api.maptiler.com/maps/voyager/style.json?key=C2S8U7Rye68dJkJXuYS9', //`https://basemaps-api.arcgis.com/arcgis/rest/services/styles/ArcGIS:Nova?type=style&token=AAPKfb602d414be84769b5019dddd3acdc66nkwfXW9n-1v8im--qHk6aMGZLa4lffe2WlENaBWIUOvaRwgWzKGWUIBSKU6UvCM9`,
-    center: [-74, 35],
-    zoom: 4,
+    center: lonlat,
+    zoom: startZoom,
     attributionControl: false,
   }); // new map
 
