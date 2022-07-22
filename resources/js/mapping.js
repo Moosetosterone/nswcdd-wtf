@@ -25,6 +25,54 @@ function drawMap(opts) {
   return map;
 } // drawMap
 
+function drawMapLibre(opts) {
+  // parse the input variables
+  const { lonlat, startZoom } = opts;
+  const apiKey =
+    'AAPKfb602d414be84769b5019dddd3acdc66nkwfXW9n-1v8im--qHk6aMGZLa4lffe2WlENaBWIUOvaRwgWzKGWUIBSKU6UvCM9';
+  const basemapEnum = 'ArcGIS:StreetsNight';
+
+  // NOTE: this won't work with the ArcGIS maps for some reason.
+  // See also: https://developers.arcgis.com/maplibre-gl-js/maps/change-the-basemap-layer/
+  var map = new maplibregl.Map({
+    container: 'map',
+    style:
+      'https://api.maptiler.com/maps/voyager/style.json?key=C2S8U7Rye68dJkJXuYS9', //`https://basemaps-api.arcgis.com/arcgis/rest/services/styles/ArcGIS:Nova?type=style&token=AAPKfb602d414be84769b5019dddd3acdc66nkwfXW9n-1v8im--qHk6aMGZLa4lffe2WlENaBWIUOvaRwgWzKGWUIBSKU6UvCM9`,
+    center: lonlat,
+    zoom: startZoom,
+    attributionControl: false,
+  }); // new map
+
+  /*
+  // Create a baseUrl and a url element. The url element will append the name of the basemap selected from the dropdown menu.
+  const baseUrl = 'https://basemaps-api.arcgis.com/arcgis/rest/services/styles';
+  const url = (name) => `${baseUrl}/${name}?type=style&token=${apiKey}`;
+
+  // Set the style of the map with the new basemap layer.
+  const setBasemap = (name) => {
+    // Instantiate the given basemap layer.
+    map.setStyle(url(name));
+  };
+  setBasemap('ArcGIS:StreetsNight');
+
+  // Create a basemapsSelectElement to return the basemap from the selector.
+  const basemapsSelectElement = document.querySelector('#basemaps');
+
+  // Add an event listener to update the map to the new basemap when the selector is changed.
+  basemapsSelectElement.addEventListener('change', (e) => {
+    setBasemap(e.target.value);
+  });
+*/
+  // add the data
+  map.on('load', () => {
+    addAirspaceBoundaries(map);
+    addSpecialUseAirspace(map);
+    addRouteCenters(map);
+  }); // map.on
+
+  return map;
+} // drawMapLibre
+
 function addMarker(map, lonlat, markerColor) {
   // Create a new marker
   const marker = new mapboxgl.Marker({
@@ -167,4 +215,4 @@ function getRouteColors() {
   return matchExpression;
 } // getRouteColors
 
-export { drawMap };
+export { drawMap, drawMapLibre };
