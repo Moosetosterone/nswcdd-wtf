@@ -30,7 +30,7 @@ function drawMapLibre(opts) {
   const { lonlat, startZoom } = opts;
   const apiKey =
     "AAPKfb602d414be84769b5019dddd3acdc66nkwfXW9n-1v8im--qHk6aMGZLa4lffe2WlENaBWIUOvaRwgWzKGWUIBSKU6UvCM9";
-  const basemapEnum = "ArcGIS:StreetsNight";
+  const basemapEnum = "ArcGIS:Midcentury";
 
   // NOTE: this won't work with the ArcGIS maps for some reason.
   // See also: https://developers.arcgis.com/maplibre-gl-js/maps/change-the-basemap-layer/
