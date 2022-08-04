@@ -1,0 +1,7 @@
+A list of bugs to fix, in no particular order.
+1. The file index.js doesn't run unless it's in the same directory as index.html. I would like it to run from resources/js.
+2. In the file faa.js the airport symbol layer doesn't display.
+3. In the file faa.js the airspace boundary labels (symbol layer) don't display.
+4. I would like to see if using a MapLibre style specification would be useful. Could I put all the data and formatting for the display into one file?
+5. Figure out how to change the data for each test event. (Can I use the style specification?)
+6. Figure out how to change the data from centers to routes. (Can I use the style specification?)
