@@ -1,24 +1,130 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="utf-8" />
+    <!-- Mapbox CSS -->
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.js"></script>
     <link
       href="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css"
       rel="stylesheet"
     />
+    <!-- MapLibre core CSS-->
+    <script src="https://unpkg.com/maplibre-gl@2.1.9/dist/maplibre-gl.js"></script>
+    <link
+      href="https://unpkg.com/maplibre-gl@2.1.9/dist/maplibre-gl.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap core CSS -->
+    <link
+      href="resources/bootstrap-5.0.2-dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="resources/css/styles.css" />
   </head>
 
   <body>
-    <div
-      id="map"
-      style="position: absolute; top: 0; bottom: 0; width: 100%"
-    ></div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-8 p-0 mb-2 vh-100 bg-dark text-white">
+          <div id="map"></div>
+
+          <div id="menu" class="fixed-top">
+            <div class="btn-group" role="group" aria-label="Basic example">
+              <button type="button" class="btn btn-outline-secondary">
+                Open
+              </button>
+              <button type="button" class="btn btn-outline-secondary">
+                Save
+              </button>
+              <button type="button" class="btn btn-outline-secondary">
+                New
+              </button>
+              <button type="button" class="btn btn-outline-secondary">
+                Share
+              </button>
+              <button type="button" class="btn btn-outline-secondary">
+                Meta
+              </button>
+              <div id="basemaps-wrapper">
+                <select id="basemaps" class="form-select">
+                  <option value="ArcGIS:Streets">Streets</option>
+                  <option value="ArcGIS:Navigation">Navigation</option>
+                  <option value="ArcGIS:Topographic">Topographic</option>
+                  <option value="ArcGIS:LightGray">Light Gray</option>
+                  <option selected value="ArcGIS:DarkGray">Dark gray</option>
+                  <option value="ArcGIS:StreetsRelief">Streets Relief</option>
+                  <option value="ArcGIS:Imagery:Standard">Imagery</option>
+                  <option value="ArcGIS:ChartedTerritory">
+                    ChartedTerritory
+                  </option>
+                  <option value="ArcGIS:ColoredPencil">ColoredPencil</option>
+                  <option value="ArcGIS:Nova">Nova</option>
+                  <option value="ArcGIS:Midcentury">Midcentury</option>
+                  <option value="OSM:Standard">OSM</option>
+                  <option value="OSM:Streets">OSM:Streets</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-4 p-3 mb-2 vh-100 bg-light">
+          <header class="d-flex">
+            <ul class="nav nav-tabs small" role="tablist">
+              <li class="nav-item">
+                <a
+                  href="tab1"
+                  class="nav-link active"
+                  aria-current="page"
+                  data-toggle="tab"
+                  role="tab"
+                  >JSON</a
+                >
+              </li>
+              <li class="nav-item">
+                <a href="tab2" class="nav-link" data-toggle="tab" role="tab"
+                  >Table</a
+                >
+              </li>
+              <li class="nav-item">
+                <a href="tab3" class="nav-link" data-toggle="tab" role="tab"
+                  >Help</a
+                >
+              </li>
+            </ul>
+          </header>
+          <div class="tab-content py-3">
+            <div class="tab-pane active" id="tab1" role="tabpanel"></div>
+            <div class="tab-pane active" id="tab2" role="tabpanel"></div>
+            <div class="tab-pane active" id="tab3" role="tabpanel"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      async
+      src="https://ga.jspm.io/npm:es-module-shims@1.5.5/dist/es-module-shims.js"
+    ></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "@popperjs/core": "https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.2/dist/esm/popper.js",
+          "bootstrap": "https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.esm.min.js"
+        }
+      }
+    </script>
+    <script type="module">
+      import * as bootstrap from "bootstrap";
+      document
+        .querySelectorAll('[data-bs-toggle="popover"]')
+        .forEach((popover) => {
+          new bootstrap.Popover(popover);
+        });
+    </script>
 
     <!-- Draw the map -->
-    <script type="module">
-      var lonlat = [-67.212, 37.114]; //[-75.23825026538958, 35.71937869595126];
-      import { drawMap } from './resources/js/mapping.js';
-      var my_map = drawMap({ lonlat: lonlat, startZoom: 5 });
-    </script>
+    <!-- should work but doesn't -->
+    <!-- <script type="module" src="./resources/js/main.js"></script> -->
+    <script type="module" src="./index.js"></script>
   </body>
 </html>
