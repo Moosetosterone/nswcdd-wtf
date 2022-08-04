@@ -16,50 +16,10 @@
     />
     <!-- Bootstrap core CSS -->
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      href="resources/bootstrap-5.0.2-dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="css/styles.css" />
-
-    <style>
-      html,
-      body,
-      #map {
-        padding: 0;
-        margin: 0;
-        height: 100%;
-        width: 100%;
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 14px;
-        color: #323232;
-      }
-
-      #basemaps-wrapper {
-        position: relative;
-        top: 0px;
-        left: 0px;
-        background: rgba(255, 255, 255, 0);
-      }
-      #basemaps {
-        font-size: 16px;
-        padding: 4px 8px;
-      }
-      #menu {
-        position: absolute;
-        background: #efefef;
-        padding: 1px;
-        top: 0;
-        left: 0;
-        width: fit-content;
-      }
-      .layer-switch {
-        position: absolute;
-        background: #efefef;
-        padding: 1px;
-      }
-    </style>
+    <link rel="stylesheet" href="resources/css/styles.css" />
   </head>
 
   <body>
@@ -91,7 +51,7 @@
                   <option value="ArcGIS:Navigation">Navigation</option>
                   <option value="ArcGIS:Topographic">Topographic</option>
                   <option value="ArcGIS:LightGray">Light Gray</option>
-                  <option value="ArcGIS:DarkGray">Dark gray</option>
+                  <option selected value="ArcGIS:DarkGray">Dark gray</option>
                   <option value="ArcGIS:StreetsRelief">Streets Relief</option>
                   <option value="ArcGIS:Imagery:Standard">Imagery</option>
                   <option value="ArcGIS:ChartedTerritory">
@@ -99,7 +59,7 @@
                   </option>
                   <option value="ArcGIS:ColoredPencil">ColoredPencil</option>
                   <option value="ArcGIS:Nova">Nova</option>
-                  <option selected value="ArcGIS:Midcentury">Midcentury</option>
+                  <option value="ArcGIS:Midcentury">Midcentury</option>
                   <option value="OSM:Standard">OSM</option>
                   <option value="OSM:Streets">OSM:Streets</option>
                 </select>
@@ -163,9 +123,8 @@
     </script>
 
     <!-- Draw the map -->
-    <script type="module">
-      import { drawMap, drawMapLibre } from "./resources/js/mapping.js";
-      drawMapLibre({ lonlat: [-76.4377, 38.2797], startZoom: 5 });
-    </script>
+    <!-- should work but doesn't -->
+    <!-- <script type="module" src="./resources/js/main.js"></script> -->
+    <script type="module" src="./index.js"></script>
   </body>
 </html>
